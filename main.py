@@ -17,6 +17,14 @@ def multiply(a, b):
     return result
 
 
+def divide(a, b):
+    try:
+        result = a / b 
+        return result
+    except ZeroDivisionError:
+        print('Cannot Divide by Zero.')
+
+
 while True:
     print("\nPersistent Python Calculator")
     print("1. Add")
@@ -46,6 +54,9 @@ while True:
         elif choice == "3":
             print("Result:", multiply(num1, num2))
         else:
-            print("Function not implemented yet.")
+            if num2 != 0:
+                print("Result:", divide(num1,num2))
+            else:
+                print("Error: Cannot Divide by Zero.")
     else:
         print("Invalid choice. Try again.")
