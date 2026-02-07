@@ -17,8 +17,8 @@ if __name__ == "__main__":
 
     start_time = time.time()
 
-    for grade in grades_list:
-        p = Process(target=compute_gwa_mp, args=([grade],))
+    for i in range(n):
+        p = Process(target=compute_gwa_mp, args=(grades_list,))
         processes.append(p)
         p.start()
 
