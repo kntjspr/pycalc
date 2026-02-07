@@ -8,4 +8,7 @@ Members:
     
     SISI, Kent Jasper
     
+
     SORONGON, Charles Juvanne
+
+LAB 2 Answers: [/lab-act-02/README.md](lab-act-02/README.md)
