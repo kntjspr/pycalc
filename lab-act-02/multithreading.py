@@ -17,8 +17,8 @@ if __name__ == "__main__":
 
     start_time = time.time()
 
-    for grade in grades_list:
-        t = threading.Thread(target=compute_gwa, args=([grade],))
+    for i in range(n):
+        t = threading.Thread(target=compute_gwa, args=(grades_list,))
         threads.append(t)
         t.start()
 
