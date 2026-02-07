@@ -1,2 +1,0 @@
-#Second Laboratory / GWA Calculator
-
