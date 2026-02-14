@@ -26,9 +26,6 @@ def run_choice(choice):
         run_data_parallelism()
 
     elif choice == "3":
-
-        print("\nRunning Task Parallelism...\n")
-        run_task_parallelism()
         
         print("\nRunning Task Parallelism...\n")
         run_task_parallelism()
