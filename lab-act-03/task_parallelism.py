@@ -36,7 +36,7 @@ employees = [
     ("Edward", 35000)
 ]
 
-def main():
+def run_task_parallelism():
     print("\nPart A – Task Parallelism (ThreadPoolExecutor)")
 
     for name, salary in employees:
@@ -65,5 +65,6 @@ def main():
         print("-" * 35)
         print(f"{'TOTAL DEDUCTION':<20} ₱{total:>12,.2f}")
 
+
 if __name__ == "__main__":
-    main()
+    run_task_parallelism()
