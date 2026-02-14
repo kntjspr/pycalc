@@ -1,10 +1,5 @@
 from data_parallelism import run_data_parallelism
-
-try:
-    from task_parallelism import run_task_parallelism
-    TASK_AVAILABLE = True
-except ImportError:
-    TASK_AVAILABLE = False
+from task_parallelism import run_task_parallelism
 
 
 def header():
@@ -23,22 +18,20 @@ def menu():
 
 def run_choice(choice):
     if choice == "1":
-        if TASK_AVAILABLE:
-            print("\nRunning Task Parallelism...\n")
-            run_task_parallelism()
-        else:
-            print("\nTask Parallelism file not yet available.\n")
+        print("\nRunning Task Parallelism...\n")
+        run_task_parallelism()
 
     elif choice == "2":
         print("\nRunning Data Parallelism...\n")
         run_data_parallelism()
 
     elif choice == "3":
-        if TASK_AVAILABLE:
-            print("\nRunning Task Parallelism...\n")
-            run_task_parallelism()
-        else:
-            print("\nTask Parallelism skipped (not available).\n")
+
+        print("\nRunning Task Parallelism...\n")
+        run_task_parallelism()
+        
+        print("\nRunning Task Parallelism...\n")
+        run_task_parallelism()
 
         print("\nRunning Data Parallelism...\n")
         run_data_parallelism()
