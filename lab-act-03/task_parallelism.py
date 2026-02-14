@@ -37,10 +37,10 @@ employees = [
 ]
 
 def main():
-    print("\n===== PART A: TASK PARALLELISM =====\n")
+    print("\nPart A – Task Parallelism (ThreadPoolExecutor)")
 
     for name, salary in employees:
-        print(f"\nEmployee: {name}")
+        print(f"\n\nEmployee: {name}")
         print(f"Salary: ₱{salary:,.2f}")
 
         with ThreadPoolExecutor(max_workers=4) as executor:
