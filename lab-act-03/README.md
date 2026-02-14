@@ -6,9 +6,9 @@
 
 Task Parallelism runs different tasks at the same time using the same data. In our code, this happens when the different deductions like SSS, PhilHealth, Pag-IBIG, and Tax are computed at the same time for one employee using ThreadPoolExecutor. Data Parallelism runs the same task at the same time using different data. In our code, this happens when the payroll of multiple employees is computed at the same time using ProcessPoolExecutor.
 
-### 2. Explain how concurrent.futures managed execution, including submit(), map(), and Future objects. Discuss the purpose of with when creating an Executor.
+### 2. Explain how concurrent.futures managed execution, including `submit()`, `map()`, and Future objects. Discuss the purpose of with when creating an Executor.
 
-The concurrent.futures module manages concurrency using Executor, submit(), map(), and Future objects. The submit() function assigns tasks and returns a Future object that stores the result. The map() function applies the same function to multiple employees at the same time. The with statement ensures the executor is properly started and automatically closed after execution.
+The concurrent.futures module manages concurrency using Executor, `submit()`, `map()`, and Future objects. The submit() function assigns tasks and returns a Future object that stores the result. The map() function applies the same function to multiple employees at the same time. The with statement ensures the executor is properly started and automatically closed after execution.
 
 ### 3. Analyze ThreadPoolExecutor execution in relation to the GIL and CPU cores. Did true parallelism occur?
 
