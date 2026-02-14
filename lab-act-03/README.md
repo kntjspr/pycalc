@@ -4,7 +4,7 @@
 
 ### 1. Differentiate Task and Data Parallelism. Identify which part of the lab demonstrates each and justify the workload division.
 
-Task Parallelism runs different tasks at the same time using the same data. In our code, this happens when the different deductions like SSS, PhilHealth, Pag-IBIG, and Tax are computed at the same time for one employee using ThreadPoolExecutor. Data Parallelism runs the same task at the same time using different data. In our code, this happens when the payroll of multiple employees is computed at the same time using ProcessPoolExecutor.
+Task parallelism involves executing different functions concurrently on the same data. This is demonstrated in the lab when deductions such as **SSS, PhilHealth, Pag-IBIG, and Tax** are calculated simultaneously for a single employee using a `ThreadPoolExecutor`. In contrast, data parallelism focuses on running the same function across different datasets at once. This occurs when the system processes the payroll of **multiple employees** simultaneously using a `ProcessPoolExecutor`. Dividing the workload this way ensures that individual complex records are broken down into smaller tasks while the overall batch of employees is processed across all available CPU cores.
 
 ### 2. Explain how concurrent.futures managed execution, including `submit()`, `map()`, and Future objects. Discuss the purpose of with when creating an Executor.
 
