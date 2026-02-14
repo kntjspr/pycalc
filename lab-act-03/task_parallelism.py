@@ -30,7 +30,12 @@ def compute_tax(salary):
 def run_task_parallelism():
     print("\n===== TASK PARALLELISM =====\n")
 
+<<<<<<< HEAD
     name, salary = random.choice(employees)
+=======
+def main():
+    print("\nPart A – Task Parallelism (ThreadPoolExecutor)\n")
+>>>>>>> d9f3377 (Task Parallelism)
 
     print(f"Selected Employee: {name}")
     print(f"Salary: ₱{salary:,.2f}")
@@ -48,6 +53,7 @@ def run_task_parallelism():
 
     total = sss + philhealth + pagibig + tax
 
+<<<<<<< HEAD
     print("\n--- Deductions ---")
     print(f"SSS: ₱{sss:,.2f}")
     print(f"PhilHealth: ₱{philhealth:,.2f}")
@@ -55,3 +61,17 @@ def run_task_parallelism():
     print(f"Withholding Tax: ₱{tax:,.2f}")
     print("----------------------")
     print(f"TOTAL DEDUCTION: ₱{total:,.2f}")
+=======
+        total = sss + philhealth + pagibig + tax
+
+        print("\n      --- Deductions ---")
+        print(f"{'SSS':<20} ₱{sss:>12,.2f}")
+        print(f"{'PhilHealth':<20} ₱{philhealth:>12,.2f}")
+        print(f"{'Pag-IBIG':<20} ₱{pagibig:>12,.2f}")
+        print(f"{'Withholding Tax':<20} ₱{tax:>12,.2f}")
+        print("-" * 35)
+        print(f"{'TOTAL DEDUCTION':<20} ₱{total:>12,.2f}")
+
+if __name__ == "__main__":
+    main()
+>>>>>>> d9f3377 (Task Parallelism)
