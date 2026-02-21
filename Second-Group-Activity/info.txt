@@ -1,0 +1,109 @@
+Members:
+
+Boniel, Gerald
+
+Lerio, Jars Christian
+
+Sisi, Kent Jasper
+
+Sorongon, Charles Juvanne
+Real-World Bottleneck: Internet Café Printing Queue
+Bottleneck:
+
+In an internet café printing queue, the current bottleneck occurs because a single staff member manages the entire printing workflow from beginning to end. This person is responsible for receiving files from customers, checking formatting and layout settings, selecting print options, sending the job to the printer, monitoring the printing process, and sometimes even handling payment afterward. Because all of these steps are handled by one individual, print jobs are processed strictly in sequence. Even if multiple customers are waiting or multiple computers are available, only one document can be processed at a time. The bottleneck therefore lies in the centralized control of the workflow, where one processing unit becomes the limiting factor in the system’s performance.
+
+Why does it limit efficiency?
+
+This setup limits efficiency because it creates unnecessary delays and prevents the system from utilizing available resources. Customers must wait in line regardless of whether their print jobs are large or small, simple or complex. A one-page document takes its turn just like a lengthy file, which increases total waiting time for everyone. During peak hours, such as after school or during project deadlines, the queue can grow significantly longer, causing frustration and reduced productivity. Additionally, even if the café has multiple printers or capable computers, these resources may remain underused because the workflow does not allow simultaneous processing. The sequential nature of the system prevents scaling, meaning the service speed cannot increase proportionally with demand.
+
+Would the improvement likely require data parallelism or task parallelism?
+
+The improvement would most likely require data parallelism. Printing multiple documents involves applying the same operation to different pieces of data, where each document represents an independent unit of work. By distributing print jobs across multiple workers, threads, or printers, several documents could be processed at the same time instead of waiting in a single line. This approach allows the workload to be partitioned while maintaining synchronization when accessing shared resources like printers or print queues. Implementing data parallelism would reduce waiting time, improve throughput, and better utilize available hardware, making the overall system more efficient and responsive.
+
+Parallel Mapping (Computational Model)
+
+To transform the internet café printing queue into a computational model, the real-world printing workflow is translated into a digital task processing system. The goal is to represent the sequential printing process as a programmable workload that can be analyzed and optimized using parallel computing principles.
+Define the Work Unit
+
+The smallest independent unit of computation in this model is one print job (one document). Each document can be processed independently because printing one file does not depend on another. In the digital simulation, each document is represented as an element in a list or queue. The system iterates through these documents and applies the same printing operation, making each print job a self-contained computational task.
+Identify System Constraints
+
+Parallelism in this model is limited by several practical constraints. One major limitation is the presence of shared resources, particularly the printer itself, which cannot handle unlimited simultaneous requests. There is also synchronization overhead when multiple threads attempt to access the print queue at the same time. Additionally, thread management and context switching introduce computational overhead, reducing efficiency as the number of threads increases. These constraints prevent ideal scaling and reflect real-world limitations such as hardware availability and coordination requirements.
+Parallel Strategy
+
+The chosen approach is data parallelism, as the same operation (printing a document) is repeatedly applied to multiple independent inputs. The list of print jobs is partitioned and distributed among multiple worker threads, where each thread processes a different document concurrently. This strategy is appropriate because each print job is uniform in structure and does not require different types of processing. However, a small critical section remains when accessing shared printer resources, requiring synchronization to prevent race conditions or conflicts.
+Flowchart Description
+
+Input Distribution
+
+    User submits multiple print jobs
+
+    Jobs stored in a queue
+
+    Queue divided among workers
+
+Worker Nodes
+
+    Thread 1 prints Document A
+
+    Thread 2 prints Document B
+
+    Thread 3 prints Document C
+
+Critical Section
+
+    Access to printer resource
+
+    Writing to shared output log
+
+Output
+
+    All documents printed faster than sequential flow
+
+Benchmark Report (Simulation)
+
+Total Documents: 20
+
+Number of Workers: 4
+
+1. Sequential Version
+
+    Each document takes 0.5 seconds to print.
+
+    Total sequential time:
+
+20×0.5=10.0 seconds
+
+2. Parallel Version (4 workers, printer lock)
+
+    Each worker processes one document at a time, but only one can print due to the lock.
+
+    So effectively, the critical section serializes the printing.
+
+    Parallel time ≈ 10.5 seconds (slightly worse than sequential due to thread overhead).
+
+
+3. Speedup
+
+Speedup= Sequential Time/Parallel Time
+
+​= 10.5/10.0
+
+​≈0.95×
+
+4. Parallel Efficiency
+
+Efficiency= (Speedup​/Number of Workers)×100
+
+=40.95​×100
+
+≈23.75%
+
+    Speedup is less than 1× because all threads must wait for the printer lock.
+
+    Adding more workers does not improve performance beyond a point due to the shared resource bottleneck.
+
+    Thread management and context switching introduce minor overhead.
+
+
+Repository: https://github.com/kntjspr/pycalc.git
