@@ -1,12 +1,18 @@
 import time
+import threading
 from concurrent.futures import ThreadPoolExecutor
+
+# Lock to simulate a single shared printer (critical section)
+printer_lock = threading.Lock()
 
 # Simulate printing a document
 def print_document(doc):
-    time.sleep(0.5)  # simulate printing delay
+    with printer_lock:  # Only one thread can print at a time
+        time.sleep(0.5)  # simulate printing delay
+        print(f"{doc} printed")  # simulate printing output
     return f"{doc} printed"
 
-
+# Sequential execution (baseline)
 def sequential_execution(documents):
     start = time.time()
     
@@ -16,7 +22,7 @@ def sequential_execution(documents):
     end = time.time()
     return end - start
 
-
+# Parallel execution with data parallelism
 def parallel_execution(documents, workers=4):
     start = time.time()
     
@@ -26,14 +32,13 @@ def parallel_execution(documents, workers=4):
     end = time.time()
     return end - start
 
-
 def main():
     documents = [f"Document_{i}" for i in range(20)]
     
     print("Running Sequential Version...")
     seq_time = sequential_execution(documents)
     
-    print("Running Parallel Version...")
+    print("\nRunning Parallel Version...")
     par_time = parallel_execution(documents, workers=4)
     
     speedup = seq_time / par_time
@@ -53,8 +58,8 @@ def main():
     if speedup < ideal_speedup:
         print("\nExplanation:")
         print("Speedup is not perfectly linear due to thread overhead,")
-        print("synchronization costs, and shared resource limitations.")
-
+        print("synchronization costs from the printer lock,")
+        print("and shared resource limitations.")
 
 if __name__ == "__main__":
     main()
