@@ -2,4 +2,4 @@
 
 ## Members Documentation
 
-- [Charles Juvanne Sorongon] (docs/SORONGON.md)
+- [/docs/SORONGON.md] (docs/SORONGON.md)
