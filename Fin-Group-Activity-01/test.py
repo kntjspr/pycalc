@@ -3,7 +3,7 @@ from data import generate_data
 from parallel_sorting import merge_sort, parallel_merge_sort
 
 if __name__ == "__main__":
-    N = 100000   
+    N = 1000000
 
     data = generate_data(N)
 
