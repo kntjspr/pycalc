@@ -2,4 +2,4 @@
 
 ## Members Documentation
 
-SORONGON Answers: [/docs/SORONGON.md](/docs/SORONGON.md)
+SORONGON Answers: [/docs/SORONGON.md](./docs/SORONGON.md)
