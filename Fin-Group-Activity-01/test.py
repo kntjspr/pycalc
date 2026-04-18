@@ -5,6 +5,7 @@ import time
 from data import generate_data
 from parallel_sorting import merge_sort as parallel_module_merge_sort
 from parallel_sorting import parallel_merge_sort
+from parallel_searching import parallel_searching
 from sequential_searching import sequential_searching
 from sequential_sort import merge_sort as sequential_merge_sort
 
@@ -62,10 +63,10 @@ def benchmark_search(name, fn, input_data, target, expected, runs):
 def print_results(title, results):
     print(f"\n{title}")
     print("-" * len(title))
-    print(f"{'Algorithm':35} {'Avg (s)':>10} {'Min (s)':>10} {'Max (s)':>10} {'Correct':>10}")
+    print(f"{'Algorithm':45} {'Avg (s)':>10} {'Min (s)':>10} {'Max (s)':>10} {'Correct':>10}")
     for row in results:
         print(
-            f"{row['name']:35} "
+            f"{row['name']:45} "
             f"{row['avg']:10.6f} "
             f"{row['min']:10.6f} "
             f"{row['max']:10.6f} "
@@ -123,6 +124,22 @@ def main():
             benchmark_search(
                 "sequential_searching (absent element)",
                 sequential_searching,
+                data,
+                absent_target,
+                None,
+                RUNS,
+            ),
+            benchmark_search(
+                "parallel_searching (present element)",
+                parallel_searching,
+                data,
+                present_target,
+                expected_present_index,
+                RUNS,
+            ),
+            benchmark_search(
+                "parallel_searching (absent element)",
+                parallel_searching,
                 data,
                 absent_target,
                 None,
