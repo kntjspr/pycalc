@@ -9,7 +9,6 @@ from parallel_searching import parallel_searching
 from sequential_searching import sequential_searching
 from sequential_sort import merge_sort as sequential_merge_sort
 
-# change if u want to adjust sample test parameters
 SEED = 42
 SIZES = [1000, 10000, 100000]
 RUNS = 3

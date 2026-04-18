@@ -7,7 +7,7 @@ from multiprocessing import Process, Queue
 def worker(sub_data: list, target: int, q: Queue, offset: int) -> None:
     for i in range(len(sub_data)):
         if sub_data[i] == target:
-            q.put(offset + i)   # global index = chunk start + local position
+            q.put(offset + i) 
             return
     q.put(None)
 
@@ -21,7 +21,6 @@ def parallel_searching(data: list, target: int) -> int | None:
     for i in range(num_processes):
         start = i * chunk_size
 
-        # last worker takes remaining elements to avoid missing any on uneven splits
         if i == num_processes - 1:
             chunk = data[start:]
         else:
@@ -43,18 +42,17 @@ def parallel_searching(data: list, target: int) -> int | None:
 def main():
     import random
 
-    N = 100000  # using medium dataset to match sequential_searching.py
+    N = 100000 
     data = [random.randint(1, 1000000) for _ in range(N)]
 
-    element = random.choice(data)   # element guaranteed to be in the list
-    non_element = -67               # not in the list (negative, outside the range 1–1000000)
+    element = random.choice(data)   
+    non_element = -67             
 
-    # Search an existing element in the array
+
     print(f"Number we are looking for is: {element}.")
     index1 = parallel_searching(data, element)
     print(f"The number {element} is at index {index1}.")
 
-    # Search a non element in the array
     print(f"\nNumber we are looking for is: {non_element}.")
     index2 = parallel_searching(data, non_element)
 
