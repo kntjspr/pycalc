@@ -2,4 +2,4 @@
 
 ## Members Documentation
 
-SORONGON Answers: [SORONGON](Fin-Group-Activity-01/docs/SORONGON.md)
+SORONGON Answers: [/docs/SORONGON.md](/docs/SORONGON.md)
