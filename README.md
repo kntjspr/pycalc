@@ -1,10 +1,6 @@
 ## GROUP 6ix-9ine
 
 ## Members:
-
-## Group 6ix-9ine's Members:
-
-
 <div align="center">
   <table>
     <tr>
