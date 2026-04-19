@@ -8,9 +8,9 @@
         <a href="https://github.com/geraldnofuckstogive666">
           <img src="https://avatars.githubusercontent.com/u/186120749?v=4" width="210px;" alt=""/>
           <br />
-          </a>
+          
           <sub><b>BONIEL, Gerald D.</b></sub>
-        
+        </a>
       </td>
       <td align="center" style="padding: 60px;">
         <a href="https://github.com/jars-ofclay">
