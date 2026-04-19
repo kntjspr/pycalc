@@ -1,6 +1,8 @@
 ## GROUP 6ix-9ine
 
 ## Members:
+
+
 <div align="center">
   <table>
     <tr>
@@ -8,7 +10,6 @@
         <a href="https://github.com/geraldnofuckstogive666">
           <img src="https://avatars.githubusercontent.com/u/186120749?v=4" width="210px;" alt=""/>
           <br />
-          
           <sub><b>BONIEL, Gerald D.</b></sub>
         </a>
       </td>
@@ -16,7 +17,6 @@
         <a href="https://github.com/jars-ofclay">
           <img src="https://avatars.githubusercontent.com/u/195441285?v=4" width="210px;" alt=""/>
           <br />
-          
           <sub><b>LERIO, Jars Christian</b></sub>
         </a>
       </td>
@@ -26,7 +26,6 @@
         <a href="https://github.com/kntjspr">
           <img src="https://avatars.githubusercontent.com/u/65537922?v=4" width="210px;" alt=""/>
           <br />
-          
           <sub><b>SISI, Kent Jasper</b></sub>
         </a>
       </td>
@@ -34,7 +33,6 @@
         <a href="https://github.com/charlesgiovanne">
           <img src="https://avatars.githubusercontent.com/u/163762221?v=4" width="210px;" alt=""/>
           <br />
-          
           <sub><b>SORONGON, Charles Juvanne</b></sub>
         </a>
       </td>
@@ -46,9 +44,6 @@
 
 
 ##
-
-
-
 
 
 
