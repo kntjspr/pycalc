@@ -16,9 +16,9 @@
         <a href="https://github.com/jars-ofclay">
           <img src="https://avatars.githubusercontent.com/u/195441285?v=4" width="210px;" alt=""/>
           <br />
-          </a>
+          
           <sub><b>LERIO, Jars Christian</b></sub>
-        
+        </a>
       </td>
     </tr>
     <tr>
@@ -26,17 +26,17 @@
         <a href="https://github.com/kntjspr">
           <img src="https://avatars.githubusercontent.com/u/65537922?v=4" width="210px;" alt=""/>
           <br />
-          </a>
+          
           <sub><b>SISI, Kent Jasper</b></sub>
-        
+        </a>
       </td>
       <td align="center" style="padding: 60px;">
         <a href="https://github.com/charlesgiovanne">
           <img src="https://avatars.githubusercontent.com/u/163762221?v=4" width="210px;" alt=""/>
           <br />
-          </a>
+          
           <sub><b>SORONGON, Charles Juvanne</b></sub>
-        
+        </a>
       </td>
     </tr>
   </table>
