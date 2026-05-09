@@ -48,4 +48,7 @@
 
 
 Final Group Activity 01 Answers: [/Fin-Group-Activity-01/README.md](Fin-Group-Activity-01/README.md)
+
 Final Lab Activity 01 Answers: [/Fin-Lab-01.md](Fin-Lab-01/README.md)
+
+Final Group Activity 02 Proofs: [/Fin-GA-02/README.MD](/pycalc/Fin-Group-Activity-02/README.md)
