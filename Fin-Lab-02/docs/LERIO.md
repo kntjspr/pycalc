@@ -1,6 +1,6 @@
 # Individual Reflection – Distributed Voting System (Fin-Lab-02)
 
-Working on this distributed voting system using Google Cloud Platform helped me understand how distributed systems actually behave outside of theory. Compared to our previous activities that focused more on local processes and threads, this lab introduced a different environment where components communicate through networks and failures can happen anytime.
+Working on this distributed voting system using Supabase helped me understand how distributed systems actually behave outside of theory. Compared to our previous activities that focused more on local processes and threads, this lab introduced a different environment where components communicate through networks and failures can happen anytime.
 
 While implementing the edge node, I realized that even simple vote generation had an important role in the whole system. In edge_node.py, the use of uuid.uuid4() allowed each generated vote to act like it came from a different user device. Adding retry logic also changed how I viewed failures in programming. In normal sequential programs, an error usually stops execution immediately, but in distributed systems the node is expected to keep retrying and continue operating even if communication temporarily fails. That difference became more obvious during testing.
 

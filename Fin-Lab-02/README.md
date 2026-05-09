@@ -189,12 +189,20 @@ Each group member should run this script independently to simulate multiple conc
 ## Deployed Cloud Run API Endpoint
 
 ```
-https://YOUR_CLOUD_RUN_URL_HERE.a.run.app/vote
+https://napnnlidkvnhojmhgxdm.supabase.co/functions/v1/bright-service
 ```
 
-> Replace this with the actual deployed URL after deployment.
+curl command
+```
+curl -i -X POST "https://napnnlidkvnhojmhgxdm.supabase.co/functions/v1/bright-service" -H "Content-Type: application/json" -d '{"user_id":"11111111-1111-1111-1111-111111111111","poll_id":"poll_1","choice":"A","timestamp":1712345678.123}'
+```
+
+api endpoint response:
+
+![Proof](assets/curl_screenshot.png)
 
 ---
+
 
 ## Demonstration
 
