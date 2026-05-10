@@ -17,30 +17,30 @@ This project implements a decoupled, event-driven voting system designed for hig
 
 ```mermaid
 graph LR
-    subgraph Edge_Environment [Edge Environment]
+    subgraph Edge_Environment
         A[Edge Node: Laptop Script]
     end
 
-    subgraph Cloud_Ingestion [Cloud Ingestion]
+    subgraph Cloud_Ingestion
         B[Cloud Run API: Flask]
     end
 
-    subgraph Messaging_Layer [Messaging Layer]
+    subgraph Messaging_Layer
         C[(Pub/Sub: Redis Queue)]
     end
 
-    subgraph Processing_Layer [Processing Layer]
+    subgraph Processing_Layer
         D[Worker Service: Consumer]
     end
 
-    subgraph Persistence_Layer [Persistence Layer]
+    subgraph Persistence_Layer
         E[(Firestore: MongoDB Atlas)]
     end
 
     A -- HTTP POST JSON --> B
-    B -- lpush (Messaging) --> C
-    C -- brpop (Buffering) --> D
-    D -- insert_one (Persistence) --> E
+    B -- lpush --> C
+    C -- brpop --> D
+    D -- insert_one --> E
 
     style C fill:#f9f,stroke:#333,stroke-width:2px
     style E fill:#bbf,stroke:#333,stroke-width:2px
