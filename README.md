@@ -53,3 +53,5 @@ Final Lab Activity 01 Answers: [/Fin-Lab-01.md](Fin-Lab-01/README.md)
 
 Final Group Activity 02 Proofs: [/Fin-GA-02/README.MD](Fin-Group-Activity-02/README.md)
 
+Final Group Lab 02 Proofs: [/Fin-GA-02/README.MD](Fin-Lab-02/README.md)
+
