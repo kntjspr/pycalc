@@ -82,4 +82,4 @@ graph LR
 - [SISI.md](docs/SISI.md)
 - [SORONGON.md](docs/SORONGON.md)
 
-## Proof:
+## Proof: [LAB-02](Fin-Lab-02/LAB-02.gif)
