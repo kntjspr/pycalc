@@ -1,34 +1,25 @@
-import json
-from google.cloud import pubsub_v1, firestore
+import json, redis
+from pymongo import MongoClient
 
-# REPLACE with your friend's Project ID and YOUR unique Subscription name
-PROJECT_ID = "friend-project-id"
-SUBSCRIPTION_ID = "group02-vote-sub"
+# PASTE YOUR URLS HERE
+REDIS_URL = "rediss://default:gQAAAAAAAdOdAAIgcDFmOGJmYmYyMWY4Mjg0ZWQ3OGRmNDM5ZmQyN2Q2ZDRiZg@fun-gecko-119709.upstash.io:6379eere"
+MONGO_URL = "mongodb+srv://charliesorongon_db_user:<db_password>@cluster0.xwzi76o.mongodb.net/?appName=Cluster0"
 
-subscriber = pubsub_v1.SubscriberClient()
-subscription_path = subscriber.subscription_path(PROJECT_ID, SUBSCRIPTION_ID)
-db = firestore.Client()
+r = redis.from_url(REDIS_URL)
+mongo_client = MongoClient(MONGO_URL)
+db = mongo_client.voting_db
 
-def callback(message):
+print("Worker is waiting for votes...")
+while True:
+    # Pop vote from Redis (Blocking wait)
+    _, message = r.brpop("vote_queue")
+    vote = json.loads(message)
+    
+    # IDEMPOTENCY: Use user_id + poll_id as the unique ID
+    vote["_id"] = f"{vote['user_id']}_{vote['poll_id']}"
+    
     try:
-        data = json.loads(message.data.decode("utf-8"))
-        
-        # IDEMPOTENCY: Use user_id + poll_id as the document name
-        # This prevents the same person from voting twice if a message is retried
-        doc_name = f"{data['user_id']}_{data['poll_id']}"
-        
-        # Save to a unique collection for your group
-        db.collection("group02-votes").document(doc_name).set(data)
-        
-        print(f"Processed & Saved: {doc_name}")
-        message.ack() # Tell Pub/Sub the message is done
-    except Exception as e:
-        print(f"Error processing: {e}")
-
-if __name__ == "__main__":
-    print("Worker listening for votes...")
-    streaming_pull_future = subscriber.subscribe(subscription_path, callback=callback)
-    try:
-        streaming_pull_future.result()
-    except KeyboardInterrupt:
-        streaming_pull_future.cancel()
+        db.votes.insert_one(vote)
+        print(f"Recorded vote: {vote['_id']}")
+    except:
+        print("Duplicate vote ignored - System is Idempotent!")
