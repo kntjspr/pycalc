@@ -14,6 +14,7 @@ This project implements a decoupled, event-driven voting system designed for hig
 5. **Firestore (Persistence):** The final storage layer where votes are recorded using an idempotent key (`user_id + poll_id`).
 
 ### Architecture Diagram
+
 ```mermaid
 graph LR
     subgraph Edge_Environment [Edge Environment]
