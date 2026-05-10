@@ -4,7 +4,7 @@ import time
 import requests
 
 # Replace with the URL Render gives you after deploying the API
-API_URL = "https://your-api-name.onrender.com/vote"
+API_URL = "https://my-voting-api.onrender.com/vote"
 
 def generate_vote():
     """Generates unique vote data for a distributed source[cite: 71, 74]."""
