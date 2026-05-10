@@ -15,6 +15,8 @@ This project implements a decoupled, event-driven voting system designed for hig
 
 ### Architecture Diagram
 
+### Architecture Diagram
+
 ```mermaid
 graph LR
     subgraph Edge_Environment
@@ -44,6 +46,7 @@ graph LR
 
     style C fill:#f9f,stroke:#333,stroke-width:2px
     style E fill:#bbf,stroke:#333,stroke-width:2px
+```
 
 
 ## Setup and Execution Instructions
